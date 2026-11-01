@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>It Takes Two — Handcrafted Co-op WebRTC Replica (May & Cody)</title>
+  <link rel="manifest" href="./manifest.json" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; user-select: none; -webkit-user-select: none; }
+    html, body {
+      width: 100%; height: 100%; overflow: hidden;
+      background: radial-gradient(circle at 50% 35%, #2D1B0E 0%, #1C110A 100%);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #FEF3C7;
+    }
+    #game-container { width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center; }
+    #controls-legend {
+      position: fixed; bottom: 8px; left: 50%; transform: translateX(-50%);
+      background: rgba(28, 17, 10, 0.92); border: 1.5px solid rgba(251, 191, 36, 0.55);
+      padding: 6px 16px; border-radius: 999px; font-size: 11px; color: #FDE68A;
+      pointer-events: none; z-index: 50; white-space: nowrap;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.6);
+    }
+    #controls-legend b { color: #38BDF8; }
+    #controls-legend .cody { color: #4ADE80; font-weight: bold; }
+    #controls-legend .hakim { color: #FBBF24; font-weight: bold; }
+  </style>
+  <!-- Phaser 3.80 & PeerJS 1.5 (Serverless WebRTC DataChannels) -->
+  <script src="https://cdn.jsdelivr.net/npm/phaser@3.80.1/dist/phaser.min.js"></script>
+  <script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
+</head>
+<body>
+  <div id="game-container"></div>
+  <div id="controls-legend">
+    <span class="hakim">📖 It Takes Two</span> | <b>WASD / Arrows</b> Move & Jump | <b>E</b> Hammer Slam / Shoot Nail (<b>May (Claw Hammer & Kinetic Anchor)</b> & <span class="cody">Cody (Nail Driver & Resonance Dash)</span>) | <b>Q</b> Nail Swing Anchor | <b>B</b> Book of Love Heart | <b>R</b> Next Chapter
+  </div>
+
+  <!-- Antigravity MAG v2.0 Runtime SDKs -->
+  <script src="./sdk/agy-audio-studio.js"></script>
+  <script src="./sdk/agy-vfx-pipeline.js"></script>
+  <script src="./sdk/agy-mobile-pwa-hud.js"></script>
+  <script src="./sdk/agy-net-p2p.js"></script>
+  <script src="./game.js"></script>
+</body>
+</html>
